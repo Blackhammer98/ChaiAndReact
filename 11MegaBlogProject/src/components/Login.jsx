@@ -4,7 +4,7 @@ import { Button, Input, Logo } from "./index";
 import authService from "../appwrite/auth";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();

@@ -3,6 +3,7 @@ import service from "../../appwrite/config";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import {Button, Input, RTE, Select} from "../index"
 
 function PostForm({ post }) {
   const { register, handleSubmit, setValue, watch, getValues, control } =
@@ -16,7 +17,7 @@ function PostForm({ post }) {
     });
 
   const navigate = useNavigate();
-  const userData = useSelector((state) => state.user.userData);
+  const userData = useSelector((state) => state.auth.userData);
 
   const submit = async (data) => {
     if (post) {
@@ -105,7 +106,7 @@ function PostForm({ post }) {
                 {post && (
                     <div className="w-full mb-4">
                         <img
-                            src={appwriteService.getFilePreview(post.featuredImage)}
+                            src={service.getFilePreview(post.featuredImage)}
                             alt={post.title}
                             className="rounded-lg"
                         />
